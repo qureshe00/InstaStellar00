@@ -10,8 +10,8 @@ import IconButton from '@mui/material/IconButton';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="transparent">
-        <Toolbar>
+      <AppBar position="static" style={{backgroundColor:"black"}} >
+        <Toolbar style={{background:"transparent", boxShadow: 'none'}} >
           <IconButton
             size="large"
             edge="start"
@@ -22,7 +22,7 @@ export default function Navbar() {
         
           </IconButton>
         
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} align='left' >
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} align='left' style={{color:"white"}} >
             InstaStellar
           </Typography>
           <Button color="inherit">Login</Button>
