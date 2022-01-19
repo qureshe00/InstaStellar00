@@ -31,14 +31,22 @@ class Search extends Component {
                 validText : false
             })
         } else if (searchDate >= min && searchDate <= max ){ //if valid date within bounds
-            this.setState({helper : "" })
-            this.setState({validText : true})
+            this.setState({
+                helper : "",
+                validText : true
+            })
+
         } else if (searchDate < min) { //too long ago
-            this.setState({helper : "date cannot precede 1995-06-16"})
-            this.setState({validText : false})
+            this.setState({
+                helper : "date cannot precede 1995-06-16",
+                validText : false
+            })
+            
         } else if (searchDate > max){
-            this.setState({helper : "date cannot be in the future"})
-            this.setState({validText : false})
+            this.setState({
+                helper : "date cannot be in the future",
+                validText : false
+            })
         } 
     }
 
@@ -66,10 +74,9 @@ class Search extends Component {
                 name="searchText" //name of textfeild
                 value={this.state.searchText} //from state
                 onChange={(e)=>{this.dateValidation(e);this.onTextChange(e)}} //when the text is changed/typed, run function onTextChange (react/js built-in event handler)
-                //fullWidth={true} //mui property
                 id="standard-error-helper-text"
                 error={this.error}
-                label="'yyyy-mm-dd'"
+                //label="'yyyy-mm-dd'"
                 helperText={this.state.helper}/>
  
                 {this.state.images.length > 0 ? (<ImageResults images={this.state.images} />) : null} {/* if images not empty after search, returm images */}
