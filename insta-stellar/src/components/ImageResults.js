@@ -13,6 +13,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import { DialogContent } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -42,9 +44,10 @@ export default function ImageResults(props) {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        enter
-      </Button>
+      <IconButton variant="outlined" onClick={handleClickOpen}>
+      <Typography style={{color:"white"}}>enter</Typography>
+      <RocketLaunchOutlinedIcon style={{color: "white"}}/>   
+      </IconButton>
       <Dialog
         fullScreen
         open={open}
