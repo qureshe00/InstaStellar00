@@ -12,9 +12,7 @@ function App() {
   
     <Navbar/>
     <Home/>
-    <Search/>
-
-
+  
     
     </>
 
