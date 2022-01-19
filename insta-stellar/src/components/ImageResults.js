@@ -45,7 +45,7 @@ export default function ImageResults(props) {
   return (
     <div>
       <IconButton variant="outlined" onClick={handleClickOpen}>
-      <Typography style={{color:"white"}}>enter</Typography>
+      <Typography style={{color:"white"}}>ready for take-off</Typography>
       <RocketLaunchOutlinedIcon style={{color: "white"}}/>   
       </IconButton>
       <Dialog

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 video{
     object-fit: cover;
     width: 100%;
@@ -17,7 +19,6 @@ video{
     object-fit: contain;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 .hero-btns{
     /*margin: auto;*/
