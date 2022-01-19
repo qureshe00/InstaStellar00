@@ -15,13 +15,7 @@ function HeroSection() {
                 Main Text
             </Typography>
             <div className='hero-btns'>
-                <Button
-                  className='btns'
-                  buttonStyle='btn--outline'
-                  buttonSize='btn--large' 
-                >
-                    even more text here
-                </Button>
+
                 <Search/>
 
 

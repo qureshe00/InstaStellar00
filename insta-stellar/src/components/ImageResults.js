@@ -34,15 +34,16 @@ export default function ImageResults(props) {
   return (
     <div>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open full-screen dialog
+        enter
       </Button>
       <Dialog
         fullScreen
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
+        style={{backgroundColor:'black', color: 'black'}}
       >
-        <AppBar sx={{ position: 'relative' }}>
+        <AppBar sx={{ position: 'relative' }} style={{backgroundColor:"black"}} >
           <Toolbar>
             <IconButton
               edge="start"
@@ -53,24 +54,21 @@ export default function ImageResults(props) {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Sound
+              {props.images[0].title}
             </Typography>
             <Button autoFocus color="inherit" onClick={handleClose}>
-              save
+              Like
             </Button>
           </Toolbar>
         </AppBar>
         <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
+          <ListItemText className='explanation'>
+          {props.images[0].explanation}
+          </ListItemText>
           <Divider />
-          <ListItem button>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItem>
+          <ListItemText className='explanation'>
+          {props.images[0].date}
+          </ListItemText>
         </List>
         <DialogContent className='picture'>
         <img style={{height: "auto", width: "auto"}} src={props.images[0].url} alt=""/>
