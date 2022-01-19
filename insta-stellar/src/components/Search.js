@@ -33,12 +33,11 @@ class Search extends Component {
         return (
             <div className='search-section'>
                 <TextField className='search-bar'
-                label="Enter Date'yyyy-mm-dd'" variant="standard"
-                style={{borderColor: 'white', fontSize: 16,}}
+                label="yyyy-mm-dd" variant="standard"
+                sx={{label:{color:'white'}, input:{color: 'white'}}}
                 name="searchText" //name of textfeild
                 value={this.state.searchText} //from state
                 onChange={this.onTextChange} //when the text is changed/typed, run function onTextChange (react/js built-in event handler)
-                floatingLabelText="Enter a date in 'YYYY-MM-DD' format" //mui textfeild property
                 //fullWidth={true} //mui property
                 />
  

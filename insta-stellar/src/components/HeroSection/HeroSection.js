@@ -14,6 +14,9 @@ function HeroSection() {
             <Typography className='mainText' mt={15} variant="h1" style={{color:"white", textAlign:"center", justify:"center"}}>
                 Main Text
             </Typography>
+            <Typography className='miniText'mt={5} variant="h6" style={{color:"white", textAlign:"center", justify:"center"}}>
+                enter the date you wish to travel to
+            </Typography>
             <div className='hero-btns'>
 
                 <Search/>

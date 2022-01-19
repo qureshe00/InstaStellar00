@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import { DialogContent } from '@mui/material';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -19,9 +20,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function ImageResults(props) {
 
-
-
   const [open, setOpen] = React.useState(false);
+  const [liked, setLike] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -29,6 +29,15 @@ export default function ImageResults(props) {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleLike = () =>{
+    if(liked){
+      setLike(false)
+    }
+    else{
+      setLike(true);
+    }
   };
 
   return (
@@ -56,13 +65,13 @@ export default function ImageResults(props) {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               {props.images[0].title}
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Like
-            </Button>
+            <IconButton sx={{backgroundColor: liked ? "gray": ""}} autoFocus color="inherit" onClick={handleLike}>
+              <FavoriteBorderIcon/>
+            </IconButton>
           </Toolbar>
         </AppBar>
         <List>
-          <ListItemText className='explanation'>
+          <ListItemText className='explanation' style={{margin: "auto"}}>
           {props.images[0].explanation}
           </ListItemText>
           <Divider />
