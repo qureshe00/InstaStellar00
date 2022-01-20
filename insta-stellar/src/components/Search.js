@@ -27,13 +27,13 @@ class Search extends Component {
 
         if(e.target.value.length < 10 || isNaN(searchDate)){
             this.setState({
-                helper : "please enter date as 'yyyy-mm-dd'", 
+                helper : "please enter an existing date as 'yyyy-mm-dd'", 
                 validText : false
         })
 
      } else if(e.target.value[4] != '-' || e.target.value[7] != '-'){ //if wrong format (yyyy/mm/dd)
             this.setState({
-                helper : "please enter date as 'yyyy-mm-dd'", 
+                helper : "please enter an existing date as 'yyyy-mm-dd'", 
                 validText : false
             })
         } else if (searchDate >= min && searchDate <= max ){ //if valid date within bounds
@@ -75,7 +75,7 @@ class Search extends Component {
         return (
             <div className='search-section'>
                 <TextField className='search-bar'
-                label="'yyyy-mm-dd'" variant="standard"
+                label="yyyy-mm-dd" variant="standard"
                 sx={{label:{color:'white'}, input:{color: 'white'}, "& .MuiFormHelperText-root":{color: 'white'}}}
                 name="searchText" //name of textfeild
                 value={this.state.searchText} //from state

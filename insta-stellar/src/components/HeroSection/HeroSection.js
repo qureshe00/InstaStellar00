@@ -16,7 +16,7 @@ function HeroSection() {
             fontFamily: "'Orbitron', sans-serif"}} >
                 I n s t a S t e l l a r
             </Typography>
-            <Typography className='miniText'mt={5} variant="h6" style={{color:"white", textAlign:"center", justify:"center"}}>
+            <Typography className='miniText'mt={5} variant="h6" style={{color:"white", textAlign:"center", justify:"center", marginBottom: 5}}>
                 enter the date you wish to travel to
             </Typography>
             <div className='hero-btns'>
