@@ -53,7 +53,6 @@ export default function ImageResults(props) {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
-        //style={{backgroundColor:'black', color: 'black'}}
         PaperProps={{sx: {backgroundColor: "black", color: "white"}}} //inverted theme
       >
         <AppBar sx={{ position: 'relative' }} style={{backgroundColor:"black"}} >

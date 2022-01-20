@@ -1,11 +1,7 @@
-
 import React, { Component } from 'react'
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import ImageResults from './ImageResults';
-
-//import Images from './images';
-
 
 class Search extends Component {
     state = {
@@ -58,22 +54,26 @@ class Search extends Component {
 
 
     onTextChange = e => { //create function to handle text change event
+
         this.setState({ searchText: e.target.value }, () => { //updating searchText state variable every time a letter is typed/deleted
-            console.log(this.state.searchText, this.validText, 'hi')
+
             if (this.state.searchText.length == 10 && this.state.validText){
-            console.log('hi');
-            axios.get(`${this.state.apiUrl}?api_key=${this.state.apiKey}&date=${this.state.searchText}`)
-            .then(res => this.setState({images: [res.data]})) //wait till http request responds, THEN do then
-            .catch(err => console.log(err));}
-            else { this.setState({images: []})}
+
+                axios.get(`${this.state.apiUrl}?api_key=${this.state.apiKey}&date=${this.state.searchText}`)
+                .then(res => this.setState({images: [res.data]})) //wait till http request responds, THEN do then
+                .catch(err => console.log(err));
+            }
+
+            else { this.setState({images: []})
+        }
         });
     };
 
 
     render() {
-        console.log(this.state);
         return (
             <div className='search-section'>
+
                 <TextField className='search-bar'
                 label="yyyy-mm-dd" variant="standard"
                 sx={{label:{color:'white'}, input:{color: 'white'}, "& .MuiFormHelperText-root":{color: 'white'}}}
@@ -82,7 +82,6 @@ class Search extends Component {
                 onChange={(e)=>{this.dateValidation(e);this.onTextChange(e)}} //when the text is changed/typed, run function onTextChange (react/js built-in event handler)
                 id="standard-error-helper-text"
                 error={this.error}
-                //label="'yyyy-mm-dd'"
                 helperText={this.state.helper}/>
  
                 {this.state.images.length > 0 ? (<ImageResults images={this.state.images} />) : null} {/* if images not empty after search, returm images */}
