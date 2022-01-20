@@ -11,7 +11,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor:"black"}} >
+      <AppBar position="absolute" style={{backgroundColor:"transparent", boxShadow: "none"}} >
         <Toolbar style={{background:"transparent", boxShadow: 'none'}} >
           <IconButton
             size="large"

@@ -7,7 +7,7 @@ function HeroSection() {
     return (
         <div className='hero-container'>
             <video src="./Earth1.mp4" autoPlay loop muted />
-            <Typography className='mainText' mt={15} variant="h1" style={{color:"white", textAlign:"center", justify:"center", 
+            <Typography className='mainText' mt={25} variant="h1" style={{color:"white", textAlign:"center", justify:"center", 
             fontFamily: "'Orbitron', sans-serif"}} >
                 I n s t a S t e l l a r
             </Typography>
