@@ -53,7 +53,8 @@ export default function ImageResults(props) {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
-        style={{backgroundColor:'black', color: 'black'}}
+        //style={{backgroundColor:'black', color: 'black'}}
+        PaperProps={{sx: {backgroundColor: "black", color: "white"}}} //inverted theme
       >
         <AppBar sx={{ position: 'relative' }} style={{backgroundColor:"black"}} >
           <Toolbar>
@@ -74,15 +75,15 @@ export default function ImageResults(props) {
           </Toolbar>
         </AppBar>
         <List>
-          <ListItemText className='explanation' style={{margin: "auto"}}>
+          <ListItemText className='explanation' style={{margin: "auto", width: "90%"}}>
           {props.images[0].explanation}
           </ListItemText>
           <Divider />
-          <ListItemText className='explanation'>
+          <ListItemText className='explanation' style={{margin: "auto", width: "90%"}}>
           {props.images[0].date}
           </ListItemText>
         </List>
-        <DialogContent className='picture'>
+        <DialogContent className='picture' style={{textAlign: "center"}}>
         <img style={{height: "auto", width: "auto"}} src={props.images[0].url} alt=""/>
         </DialogContent>
       </Dialog>
