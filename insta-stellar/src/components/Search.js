@@ -27,13 +27,13 @@ class Search extends Component {
 
         if(e.target.value.length < 10 || isNaN(searchDate)){
             this.setState({
-                helper : "please enter an existing date as 'yyyy-mm-dd'", 
+                helper : "please enter an existing date in 'yyyy-mm-dd' form", 
                 validText : false
         })
 
      } else if(e.target.value[4] != '-' || e.target.value[7] != '-'){ //if wrong format (yyyy/mm/dd)
             this.setState({
-                helper : "please enter an existing date as 'yyyy-mm-dd'", 
+                helper : "please enter an existing date in 'yyyy-mm-dd' form", 
                 validText : false
             })
         } else if (searchDate >= min && searchDate <= max ){ //if valid date within bounds
